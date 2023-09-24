@@ -1,0 +1,38 @@
+.btn-register {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #9B287B;
+  color: #9B287B;
+}
+#btn-submit {
+  width: 100%;
+  background: linear-gradient(45deg, #bb18d6, #ce26ac);
+  border: none;
+  border-radius: 30px;
+}
+input{
+    background: var(--secondary-bg);
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    color: var(--main-text-color);
+}
+  input:focus {
+    border: 2px solid #bb18d6;
+    background: var(--secondary-bg);
+    color: var(--main-text-color);
+    box-shadow: none;
+  }
+/*
+    main-dark-blue: #131A23
+    blue: #415A77
+    purple: #9B287B
+    platinum: #E7E5DF
+    #FF01FB
+
+
+    grey: #181818
+    main-bg: #101010
+    purple: #bb18d6
+    light-purple: #ce26ac
+*/
