@@ -8,17 +8,22 @@
   <button type="submit">Login</button>
 </form>
 -->
+<div class="container-component form-container">
 
-<div class="form-container d-flex align-items-center justify-content-center mt-3">
-  <div class="inner-container col-4" *ngIf="currentPage == 'login'">
-    <form>
+  <div class="inner-container col-4" *ngIf="isLoginPage">
+
+    <form #form="ngForm" (submit)="login()">
+      <div class="col-12 mb-5">
+        <h1>{{isLoginPage ? "Log in" : "Sign in" }}</h1>
+      </div>
+
       <div class="form-group">
         <label for="loginEmail" class="mb-2">Email address</label>
-        <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        <input type="email" class="form-control" id="loginEmail" name="Email" placeholder="Enter email"  [(ngModel)]="credentials.Email">
       </div>
       <div class="form-group mt-4">
         <label for="loginPassword" class="mb-2">Password</label>
-        <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+        <input type="password" class="form-control" id="loginPassword" name="Password" placeholder="Password" [(ngModel)]="credentials.Password">
       </div>
 
       <div class="row d-flex align-items-center justify-content-center mt-4">
@@ -26,14 +31,17 @@
           <button id="btn-submit" type="submit" class="btn btn-primary mt-3">Submit</button>
         </div>
         <div class="col-12 mt-4">
-          <button class="btn-register" (click)="changeView('register')">Don't have an account? Click here!</button>
+          <button class="btn-register" (click)="changeView(false)">Don't have an account? Click here!</button>
         </div>
       </div>
     </form>
   </div>
 
-  <div class="inner-container col-4" *ngIf="currentPage == 'register'">
-    <form>
+  <div class="inner-container col-4" *ngIf="!isLoginPage">
+    <form >
+      <div class="col-12 mb-5">
+        <h1>{{login ? "Log in" : "Sign in" }}</h1>
+      </div>
       <div class="form-group">
         <label for="loginEmail" class="mb-2">Email address</label>
         <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
@@ -53,7 +61,7 @@
           <button id="btn-submit" type="submit" class="btn btn-primary mt-3">Submit</button>
         </div>
         <div class="col-12 mt-4">
-          <button class="btn-register" (click)="changeView('login')">Already have an account? Click here!</button>
+          <button class="btn-register" (click)="changeView(true)">Already have an account? Click here!</button>
         </div>
       </div>
     </form>

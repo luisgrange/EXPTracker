@@ -6,6 +6,11 @@
   --secondary-bg: #181818;
   --primary-text-color: #fcfcfc;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body{
     background: var(--primary-bg);
@@ -25,3 +30,14 @@ code {
   border-color: #1861ac;
 }
 
+.container{
+    height: 100%;
+}
+
+.container-component{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

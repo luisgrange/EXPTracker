@@ -41,7 +41,7 @@ namespace ETE.Identidade.API.Controllers
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                return Ok(await GenerateToken(userRegister.Email));
+                return Ok();
 
             }
 
@@ -58,7 +58,7 @@ namespace ETE.Identidade.API.Controllers
 
             if (result.Succeeded)
             {
-                return Ok(await GenerateToken(user.Email));
+                return Ok();
             }
 
             return BadRequest();
